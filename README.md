@@ -30,12 +30,12 @@ The JWS payload contains the following claims:
 ### Request Details Claim
 The JSON value of the rqd claim MAY include the following values, depending on the request type:
 
-htm: The value of the HTTP method (Section 9.1 of [RFC9110]) of the request to which the JWT is attached. This value MUST be used if the request is an HTTP request.
-htu: The HTTP target URI (Section 7.1 of [RFC9110]) of the request to which the JWT is attached, without query and fragment parts. This value MUST be used if the request is an HTTP request.
-
-kafka topic
-
-gRPC topic
+* htm: The value of the HTTP method (Section 9.1 of [RFC9110]) of the request to which the JWT is attached. This value MUST be used if the request is an HTTP request.
+* htu: The HTTP target URI (Section 7.1 of [RFC9110]) of the request to which the JWT is attached, without query and fragment parts. This value MUST be used if the request is an HTTP request.
+* krt: The Kafka Request Type. This value MUST be used if this is a Kafka request.
+* ktn: The Kafka Topic name to which the request is being directed. This value MUST be used if this is a Kafka request.
+* ktp: The Kafka Partition within a topic. This value MUST be used if this is a Kafka request.
+* gsm: The gRPC service method. This value MUST be used if this is a gRPC request.
 
 ## Processing Rules
 
